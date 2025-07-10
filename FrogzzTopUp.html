@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopUp Murah Tanpa Register, Hanya Di FrogzzStore | TOPUP</title>
+    <style>
+        :root {
+            --bg-light: #f0f2f5;
+            --bg-dark: #121212;
+            --card-light: #fff;
+            --card-dark: #1f1f1f;
+            --text-light: #000;
+            --text-dark: #f0f0f0;
+            --highlight: #6A11CB;
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            transition: background 0.3s, color 0.3s;
+        }
+        [data-theme="dark"] {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+        .header {
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .header h1 {
+            color: var(--highlight);
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0 20px;
+            color: #888;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: 2px solid var(--highlight);
+            color: var(--highlight);
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 0 15px 30px;
+        }
+        .card {
+            background: var(--card-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        [data-theme="dark"] .card {
+            background: var(--card-dark);
+            box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        .card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .card span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <div class="header">
+        <h1>Menu <span style="color: #6A11CB;">TopUp</span></h1>
+        <p>TopUp Game Favorit Anda</p>
+    </div>
+    <div class="grid">
+        <div class="card" onclick="window.location.href='freefire.html'">
+            <img src="freefire.jpg" alt="Free Fire">
+            <span>Free Fire</span>
+        </div>
+        <div class="card" onclick="window.location.href='MLBB.html'">
+            <img src="MLBB.jpg" alt="MLBB">
+            <span>MLBB</span>
+        </div>
+        </div>
+        <div class="card" onclick="window.location.href='bloodstrike.html'">
+            <img src="bloodstrike.jpg" alt="Bloodstrike">
+            <span>Bloodstrike</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            document.querySelector('.theme-toggle').textContent = next === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+            localStorage.setItem('theme', next);
+        }
+        // Load saved theme
+        if(localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+            document.querySelector('.theme-toggle').textContent = localStorage.getItem('theme') === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
+    </script>
+</body>
+</html>
