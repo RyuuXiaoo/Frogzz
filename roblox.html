@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrogzzStore TopUp BloodStrike</title>
+    <title>FrogzzStore TopUp Roblox</title>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <style>
         body {
@@ -195,7 +195,7 @@
 <body>
     <div class="header">
         <img src="logo.jpg" alt="Logo">
-        <h1>Top Up Gold BloodStrike</h1>
+        <h1>Top Up Voucher Roblox</h1>
         <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
         <div class="total-price" id="totalHeader">Rp 0</div>
     </div>
@@ -203,8 +203,8 @@
     <div class="countdown" id="countdown"></div>
     <div class="progress-bar" id="progressBar"></div>
     <div class="container">
-        <label for="ffid">Masukkan ID BloodStrike</label>
-        <input type="text" id="ffid" placeholder="Contoh: 123456789" oninput="checkForm()">
+        <label for="ffid">Masukkan Username Roblox Kalian</label>
+        <input type="text" id="ffid" placeholder="Contoh : Username_123" oninput="checkForm()">
         <label>Pilih Jumlah Diamond</label>
         <div class="diamond-grid" id="diamondGrid"></div>
         <label for="payment">Pilih Metode Pembayaran</label>
@@ -233,12 +233,14 @@
         }
 
 const diamondList = [
-    { name: "100 Gold", price: 11582 },
-    { name: "300 Gold", price: 32620 },
-    { name: "500 Gold", price: 53573 },
-    { name: "1.000 Gold", price: 105885 },
-    { name: "2.000 Gold", price: 210650 },
-    { name: "5.000 Gold", price: 525016 },
+    { name: "200 Robux", price: 60095 },    // 59.000 + 1.095
+    { name: "400 Robux", price: 106095 },   // 105.000 + 1.095
+    { name: "800 Robux", price: 166095 },   // 165.000 + 1.095
+    { name: "1.000 Robux", price: 206095 }, // 205.000 + 1.095
+    { name: "1.200 Robux", price: 281095 }, // 280.000 + 1.095
+    { name: "2.000 Robux", price: 408928 }, // 407.833 + 1.095
+    { name: "4.500 Robux", price: 799090 }, // 797.995 + 1.095
+    { name: "10.000 Robux", price: 1711095 } // 1.710.000 + 1.095
 ];
         const diamondGrid = document.getElementById("diamondGrid");
         let selectedDiamond = null;
@@ -246,7 +248,7 @@ const diamondList = [
         diamondList.forEach((item, index) => {
             const div = document.createElement("div");
             div.className = "diamond-item";
-            div.innerHTML = `<img src="gold.jpg" alt="Diamond">${item.name}<br>Rp ${item.price.toLocaleString('id-ID')}`;
+            div.innerHTML = `<img src="robux.png" alt="Diamond">${item.name}<br>Rp ${item.price.toLocaleString('id-ID')}`;
             div.onclick = () => selectDiamond(index);
             diamondGrid.appendChild(div);
         });
